@@ -1,0 +1,4 @@
+__pycache__
+migrations/
+config.py
+setup.sh
