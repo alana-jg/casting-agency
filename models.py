@@ -17,25 +17,57 @@ def setup_db(app):
     app.config.from_object('config')
     db.app = app
     db.init_app(app)
-    db.create_all()  
+    #db.create_all()  
 
-'''
-Person
-Have title and release year
-'''
-class Person(db.Model):  
-  __tablename__ = 'People'
+class Movie(db.Model):
+  __tablename__ = 'Movie'
 
   id = Column(db.Integer, primary_key=True)
-  name = Column(String)
-  catchphrase = Column(String)
+  title = Column(db.String)
+  release_date = Column(db.Integer)
 
-  def __init__(self, name, catchphrase=""):
+  def __init__(self, title, release_date):
+    self.title = title
+    self.release_date = release_date
+
+  def format(self):
+    return {
+      'id': self.id,
+      'title': self.title,
+      'release_date': self.release_date}
+
+  def update(self):
+    db.session.commit()
+
+  def delete(self):
+    db.session.delete(self)
+    db.session.commit()
+
+    
+
+class Actor(db.Model):
+  __tablename__ = 'Actor'
+
+  id = Column(db.Integer, primary_key=True)
+  name = Column(db.String)
+  age = Column(db.Integer)
+  gender = Column (db.String)
+
+  def __init__(self, name, age, gender):
     self.name = name
-    self.catchphrase = catchphrase
+    self.age = age
+    self.gender = gender
 
   def format(self):
     return {
       'id': self.id,
       'name': self.name,
-      'catchphrase': self.catchphrase}
+      'age': self.age,
+      'gender': self.gender}
+  
+  def update(self):
+    db.session.commit()
+
+  def delete(self):
+    db.session.delete(self)
+    db.session.commit()
