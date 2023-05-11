@@ -1,23 +1,26 @@
 import os
 from sqlalchemy import Column, String, create_engine
 from flask_sqlalchemy import SQLAlchemy
+from os.path import join, dirname
 import json
-
-# database_path = os.environ['DATABASE_URL']
-# if database_path.startswith("postgres://"):
-#   database_path = database_path.replace("postgres://", "postgresql://", 1)
+from dotenv import load_dotenv
 
 db = SQLAlchemy()
+dotenv_path = join(dirname(__file__), 'login.env')
+load_dotenv(dotenv_path)
+database_path = os.environ['DATABASE_URL']
 
 '''
 setup_db(app)
     binds a flask application and a SQLAlchemy service
 '''
-def setup_db(app):
-    app.config.from_object('config')
+def setup_db(app, database_path=database_path):
+    app.config['SQLALCHEMY_DATABASE_URI'] = database_path
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    #app.config.from_object('config')
     db.app = app
     db.init_app(app)
-    #db.create_all()  
+    db.create_all()
 
 class Movie(db.Model):
   __tablename__ = 'Movie'
