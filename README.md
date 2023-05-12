@@ -109,7 +109,7 @@ The API will return five error types when requests fail:
 }
 ```
 
-### POST /actors
+#### POST /actors
 
 - General
   - Creates a new actor with "name", "age" and "gender" fields required
@@ -123,7 +123,7 @@ The API will return five error types when requests fail:
 }
 ```
 
-### PATCH /actors
+#### PATCH /actors
 - General 
   - Updates an actor by ID with "name", "age" and "gender" fields required
 - Sample `curl -r PATCH --url 'http://127.0.0.1:5000/actors/11' -H 'Authorization: Bearer {token}' -H 'Content-Type: application/json' -d '{"name": "Emma Watson", "age": 35, "gender": "female"}'`
@@ -136,7 +136,7 @@ The API will return five error types when requests fail:
 }
 ```
 
-### DELETE /actors
+#### DELETE /actors
 - General
   - Deletes an actor by ID
 - Sample `curl -r DELETE --url 'http://127.0.0.1:5000/actors/12' -H 'Authorization: Bearer {token}' -H 'Content-Type: application/json'`
@@ -167,7 +167,7 @@ The API will return five error types when requests fail:
 }
 ```
 
-### POST /movies
+#### POST /movies
 
 - General
   - Creates a new movie with "title" and "release_date" fields required
@@ -180,7 +180,7 @@ The API will return five error types when requests fail:
 }
 ```
 
-### PATCH /movies
+#### PATCH /movies
 - General 
   - Updates a movie by ID with "title" and "release_date" fields required
 - Sample `curl -r PATCH --url 'http://127.0.0.1:5000/movies/6' -H 'Authorization: Bearer {token}' -H 'Content-Type: application/json' -d '{"title": "Toy Story", "release_date": 1997}'`
@@ -192,7 +192,7 @@ The API will return five error types when requests fail:
 }
 ```
 
-### DELETE /movies
+#### DELETE /movies
 - General
   - Deletes a movie by ID
 - Sample `curl -r DELETE --url 'http://127.0.0.1:5000/movies/7' -H 'Authorization: Bearer {token}' -H 'Content-Type: application/json'`
