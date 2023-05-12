@@ -12,19 +12,23 @@ This Capstone project is completed as part of the Udacity Full Stack Development
 
 2. Set up and populate the database:
 With Postgres running, create a casting database:
-`createdb casting`
+`create database casting`
 
 3. Create and activate a virtual environment:
-`py -m venv venv
-venv/Scripts/activate`
+```bash
+py -m venv venv
+venv/Scripts/activate
+```
 
 4. Install dependencies:
 `pip install -r requirements.txt`
 
 5. Run the application
-`set FLASK_APP=flaskr
+```bash
+set FLASK_APP=flaskr
 set FLASK_ENV=development
-flask run`
+flask run
+```
 
 The application is run on `http://127.0.0.1:5000/` by default
 
@@ -32,7 +36,7 @@ The application is run on `http://127.0.0.1:5000/` by default
 ### Getting Started
 - Base URL: At present this app can only be run locally and is not hosted as a base URL.
 
-###Authentication: 
+### Authentication: 
 There are currently three roles required to access all endpoints except for root. Authentication uses Bearer tokens. The three roles are:
 - The Casting Assistant role can:
   -  view actors
