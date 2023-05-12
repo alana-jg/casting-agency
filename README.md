@@ -75,7 +75,7 @@ The API will return five error types when requests fail:
 
 - General
   - Returns a success value to confirm home route is working correctly
-- Sample `curl -r GET --url 'http://127.0.0.1:5000/'`
+- Sample `curl -r GET --url 'https://service-casting-capstone.onrender.com/'`
 ```bash
 {
     "success": true
