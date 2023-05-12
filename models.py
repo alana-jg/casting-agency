@@ -3,11 +3,11 @@ from sqlalchemy import Column, String, create_engine
 from flask_sqlalchemy import SQLAlchemy
 from os.path import join, dirname
 import json
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
 db = SQLAlchemy()
-dotenv_path = join(dirname(__file__), 'login.env')
-load_dotenv(dotenv_path)
+# dotenv_path = join(dirname(__file__), 'login.env')
+# load_dotenv(dotenv_path)
 database_path = os.environ['DATABASE_URL']
 
 '''

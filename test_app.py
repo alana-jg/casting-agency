@@ -6,10 +6,10 @@ from flask_sqlalchemy import SQLAlchemy
 
 from app import create_app
 from models import setup_db, Actor, Movie
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-dotenv_path = join(dirname(__file__), 'login.env')
-load_dotenv(dotenv_path)
+# dotenv_path = join(dirname(__file__), 'login.env')
+# load_dotenv(dotenv_path)
 
 casting_assistant_token = os.environ.get('CASTING_ASSISTANT')
 casting_director_token = os.environ.get('CASTING_DIRECTOR')
