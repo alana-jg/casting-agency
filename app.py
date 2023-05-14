@@ -3,7 +3,7 @@ from flask import Flask, jsonify, abort, request
 from models import *
 from flask_cors import CORS
 from flask_migrate import Migrate
-from auth import AuthError, get_token_auth_header, requires_auth, verify_decode_jwt
+from auth import AuthError, requires_auth
 
 def create_app(test_config=None):
 

@@ -1,13 +1,8 @@
 import os
-from sqlalchemy import Column, String, create_engine
+from sqlalchemy import Column
 from flask_sqlalchemy import SQLAlchemy
-from os.path import join, dirname
-import json
-#from dotenv import load_dotenv
 
 db = SQLAlchemy()
-# dotenv_path = join(dirname(__file__), 'login.env')
-# load_dotenv(dotenv_path)
 database_path = os.environ['DATABASE_URL']
 
 '''
@@ -17,7 +12,6 @@ setup_db(app)
 def setup_db(app, database_path=database_path):
     app.config['SQLALCHEMY_DATABASE_URI'] = database_path
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    #app.config.from_object('config')
     db.app = app
     db.init_app(app)
     db.create_all()
@@ -44,9 +38,7 @@ class Movie(db.Model):
 
   def delete(self):
     db.session.delete(self)
-    db.session.commit()
-
-    
+    db.session.commit()    
 
 class Actor(db.Model):
   __tablename__ = 'Actor'
