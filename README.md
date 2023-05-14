@@ -34,7 +34,7 @@ The application is run on `http://127.0.0.1:5000/` by default
 
 ## API Reference
 ### Getting Started
-- Base URL: At present this app can only be run locally and is not hosted as a base URL.
+- Base URL: At present this app can be run locally and is hosted as a base URL: https://service-casting-capstone.onrender.com/.
 
 ### Authentication: 
 There are currently three roles required to access all endpoints except for root. Authentication uses Bearer tokens. The three roles are:
@@ -75,7 +75,7 @@ The API will return five error types when requests fail:
 
 - General
   - Returns a success value to confirm home route is working correctly
-- Sample `curl -r GET --url 'http://127.0.0.1:5000/'`
+- Sample `curl -r GET --url 'https://service-casting-capstone.onrender.com/'`
 ```bash
 {
     "success": true
@@ -88,7 +88,7 @@ The API will return five error types when requests fail:
 
 - General
   - Returns a list of actors
-- Sample `curl -r GET --url 'http://127.0.0.1:5000/actors' -H 'Authorization: Bearer {token}'`
+- Sample `curl -r GET --url 'https://service-casting-capstone.onrender.com/actors' -H 'Authorization: Bearer {token}'`
 ```bash
 {
   "actors": [
@@ -113,7 +113,7 @@ The API will return five error types when requests fail:
 
 - General
   - Creates a new actor with "name", "age" and "gender" fields required
-- Sample `curl -r POST --url 'http://127.0.0.1:5000/actors' -H 'Authorization: Bearer {token}' -H 'Content-Type: application/json' -d '{"name": "Emma Watson", "age": 33, "gender": "female"}'`
+- Sample `curl -r POST --url 'https://service-casting-capstone.onrender.com/actors' -H 'Authorization: Bearer {token}' -H 'Content-Type: application/json' -d '{"name": "Emma Watson", "age": 33, "gender": "female"}'`
 ```bash
 {
     "age": 33,
@@ -126,7 +126,7 @@ The API will return five error types when requests fail:
 #### PATCH /actors
 - General 
   - Updates an actor by ID with "name", "age" and "gender" fields required
-- Sample `curl -r PATCH --url 'http://127.0.0.1:5000/actors/11' -H 'Authorization: Bearer {token}' -H 'Content-Type: application/json' -d '{"name": "Emma Watson", "age": 35, "gender": "female"}'`
+- Sample `curl -r PATCH --url 'https://service-casting-capstone.onrender.com/actors/11' -H 'Authorization: Bearer {token}' -H 'Content-Type: application/json' -d '{"name": "Emma Watson", "age": 35, "gender": "female"}'`
 ```bash
 {
     "age": 35,
@@ -139,7 +139,7 @@ The API will return five error types when requests fail:
 #### DELETE /actors
 - General
   - Deletes an actor by ID
-- Sample `curl -r DELETE --url 'http://127.0.0.1:5000/actors/12' -H 'Authorization: Bearer {token}' -H 'Content-Type: application/json'`
+- Sample `curl -r DELETE --url 'https://service-casting-capstone.onrender.com/actors/12' -H 'Authorization: Bearer {token}' -H 'Content-Type: application/json'`
 ```bash
 {
     "deleted": 11,
@@ -153,7 +153,7 @@ The API will return five error types when requests fail:
 
 - General
   - Returns a list of movies
-- Sample `curl -r GET --url 'http://127.0.0.1:5000/movies' -H 'Authorization: Bearer {token}'`
+- Sample `curl -r GET --url 'https://service-casting-capstone.onrender.com/movies' -H 'Authorization: Bearer {token}'`
 ```bash
 {
     "movies": [
@@ -171,7 +171,7 @@ The API will return five error types when requests fail:
 
 - General
   - Creates a new movie with "title" and "release_date" fields required
-- Sample `curl -r POST --url 'http://127.0.0.1:5000/movies' -H 'Authorization: Bearer {token}' -H 'Content-Type: application/json' -d '{"title": "Toy Story", "release_date": 1995}'`
+- Sample `curl -r POST --url 'https://service-casting-capstone.onrender.com/movies' -H 'Authorization: Bearer {token}' -H 'Content-Type: application/json' -d '{"title": "Toy Story", "release_date": 1995}'`
 ```bash
 {
     "release_date": 1995,
@@ -183,7 +183,7 @@ The API will return five error types when requests fail:
 #### PATCH /movies
 - General 
   - Updates a movie by ID with "title" and "release_date" fields required
-- Sample `curl -r PATCH --url 'http://127.0.0.1:5000/movies/6' -H 'Authorization: Bearer {token}' -H 'Content-Type: application/json' -d '{"title": "Toy Story", "release_date": 1997}'`
+- Sample `curl -r PATCH --url 'https://service-casting-capstone.onrender.com/movies/6' -H 'Authorization: Bearer {token}' -H 'Content-Type: application/json' -d '{"title": "Toy Story", "release_date": 1997}'`
 ```bash
 {
     "release_date": 1997,
@@ -195,7 +195,7 @@ The API will return five error types when requests fail:
 #### DELETE /movies
 - General
   - Deletes a movie by ID
-- Sample `curl -r DELETE --url 'http://127.0.0.1:5000/movies/7' -H 'Authorization: Bearer {token}' -H 'Content-Type: application/json'`
+- Sample `curl -r DELETE --url 'https://service-casting-capstone.onrender.com/movies/7' -H 'Authorization: Bearer {token}' -H 'Content-Type: application/json'`
 ```bash
 {
     "deleted": 7,
