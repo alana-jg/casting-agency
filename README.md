@@ -21,7 +21,7 @@ venv/Scripts/activate
 ```
 
 4. Install dependencies:
-`pip install -r requirements.txt`
+`pip3 install -r requirements.txt`
 
 5. Run the application
 ```bash
@@ -31,6 +31,20 @@ flask run
 ```
 
 The application is run on `http://127.0.0.1:5000/` by default
+
+## Hosting instructions
+This project is hosted using Render. To host on Render, follow the below steps:
+1. Create a Render account and log in
+2. Set up a Postgres database by selecting New PostgresSQL
+  - Provide a database new, select a tier and create the database
+3. Create a new Web Service 
+  - Link to the GitHub repo where the project is stored
+  - Provide a name and select an instance type
+  - Enter the build command: `pip install -r requirements.txt`
+4. Connect the Web Service and Database
+  - Open the database service and copy the internal database URL
+  - Within the Web Service create an environment variable with the value of the previously copied URL
+5. Save and wait for the build to complete. The service can now be accessed on the hosting URL.
 
 ## API Reference
 ### Getting Started
